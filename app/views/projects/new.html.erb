@@ -1,0 +1,10 @@
+<h1>Cadastrar Projeto</h1>
+
+<%= form_with(url: "/projects/create", method: "post", local: true) do |form|%>
+  <label>Titulo</label>
+  <%= form.text_field(:title) %>
+  <label>Descriçao</label>
+  <%= form.text_field(:description) %>
+  </br>
+  <%= submit_tag("Enviar") %>
+<% end %>
