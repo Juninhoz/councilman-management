@@ -1,13 +1,19 @@
 class ProjectsController < ApplicationController
   def index
-    @duda = 'dudinha'
+    @projects = Project.all
   end
 
   def new
   end
 
   def create
-    @titulo = params["title"]
-    @descricao = params["description"]
+    Project.create(project_params)
+    redirect_to projects_path
+  end
+
+  private
+
+  def project_params
+    params.permit(:title, :description)
   end
 end
