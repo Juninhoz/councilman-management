@@ -1,4 +1,5 @@
 <h1>Cadastrar Projeto</h1>
+<%= link_to 'Projetos', projects_path %>
 
 <%= form_with(url: "/projects/create", method: "post", local: true) do |form|%>
   <label>Titulo</label>
