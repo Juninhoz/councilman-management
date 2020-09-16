@@ -1,10 +1,14 @@
 <h1>Listagem de projetos</h1> 
 
-<%= link_to 'Novo Projeto', projects_new_path %>
+<%# <%= link_to 'Novo Projeto', projects_new_path %>
 
 <p>Opa, bem vindo</p>
 
 <% @projects.each do |project| %>
-  <p>Titulo = <%= project.title %> Descriçao = <%= project.description %></p>
+  ID: <%= project.id %> <br>
+  Titulo = <%= project.title %> 
   <br>
+  Descriçao = <%= project.description %>
+<br>
+<br>
 <% end %>
