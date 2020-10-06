@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Councilman Management - Gestão Vereador 
 
-Things you may want to cover:
+System for receiving complaints from the population (users) and the creation of projects based on these complaints.
 
-* Ruby version
+### Tecnical Information
 
-* System dependencies
+* Ruby: 2.5.1
+* Rails: 6.0.3
+* Database: Postgres
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+After cloning the repository run the command **rails db:create** and **rails db:migrate**
