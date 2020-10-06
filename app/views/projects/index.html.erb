@@ -1,3 +1,14 @@
-<h1>Listagem de projetos</h1>
+<h1>Listagem de projetos</h1> 
 
-<p>Opa, bem vindo <%= @duda %></p>
+<%# <%= link_to 'Novo Projeto', projects_new_path %>
+
+<p>Opa, bem vindo</p>
+
+<% @projects.each do |project| %>
+  ID: <%= project.id %> <br>
+  Titulo = <%= project.title %> 
+  <br>
+  Descriçao = <%= project.description %>
+<br>
+<br>
+<% end %>

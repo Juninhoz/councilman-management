@@ -1,7 +1,7 @@
-<h1>Cadastrar Projeto</h1>
+<h1>Editar Projeto</h1>
 <%= link_to 'Projetos', projects_path %>
 
-<%= form_with(model: @project, url: "/projects", method: "post") do |form|%>
+<%= form_with(model: @project, url: "/projects/#{@project.id}", method: :post) do |form|%>
   <label>Titulo</label>
   <%= form.text_field(:title) %>
   <label>Descriçao</label>
