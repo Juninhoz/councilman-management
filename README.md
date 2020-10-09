@@ -11,3 +11,8 @@ System for receiving complaints from the population (users) and the creation of 
 * Database: Postgres
 
 After cloning the repository run the command **rails db:create** and **rails db:migrate**
+
+### Installation with docker
+
+* docker-compose up -d
+* docker-compose exec app bundle exec rake db:setup db:migrate
