@@ -14,4 +14,5 @@ After cloning the repository run the command **rails db:create** and **rails db:
 
 ### Installation with docker
 
-* docker-compose up
+* docker-compose up -d
+* docker-compose exec app bundle exec rake db:setup db:migrate
