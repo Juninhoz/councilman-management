@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   post '/projects/:id', to: 'projects#update'
   post '/projects', to: 'projects#create'
 
-  root :to => 'application#index'
+  root to: 'application#index'
 end

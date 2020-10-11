@@ -1,10 +1,12 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - 'node_modules/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
     - '.git/**/*'
     - 'bin/**/*'
+    - 'db/schema.rb'
 
 Style/Documentation:
   Enabled: false 

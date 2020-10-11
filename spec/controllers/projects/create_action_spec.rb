@@ -1,16 +1,14 @@
 require 'rails_helper'
 
 describe ProjectsController, '#create', type: [:controller], slow: true do
-
   context 'When pass valid params' do
-
     let(:params) do
       { project: { title: 'Titulo de projeto', description: 'Descricao do projeto' } }
     end
 
     before do
       params
-      post :create, params: params 
+      post :create, params: params
     end
 
     it 'Should be created' do
