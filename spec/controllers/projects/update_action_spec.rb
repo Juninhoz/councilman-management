@@ -1,17 +1,15 @@
 require 'rails_helper'
 
 describe ProjectsController, '#update', type: [:controller], slow: true do
-
   context 'When pass valid params' do
-    
     let(:project) { Project.create(title: 'Titulo', description: 'Descricao') }
     let(:update_params) do
-      { title: 'Titulo de projeto', description: 'Descricao do projeto' } 
+      { title: 'Titulo de projeto', description: 'Descricao do projeto' }
     end
 
     before do
       update_params
-      put :update, params: { id: project.id , project: update_params }
+      put :update, params: { id: project.id, project: update_params }
     end
 
     it 'Should be updated' do
