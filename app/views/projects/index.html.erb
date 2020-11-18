@@ -1,14 +1,44 @@
-<h1>Listagem de projetos</h1> 
+<!-- component -->
+<div class="w-2/3 mx-auto">
+  <div class="bg-white shadow-md rounded my-6">
+    <div class="flex">
+      <div class="w-1/5 h-12"></div>
+      <div class="w-3/5 h-12 text-center">
+        <h1 class="m-1 font-bold text-blue-500 text-2xl content-center">Projetos</h1>
+      </div>
+      <div class="w-1/5 h-12">
+        <%= link_to new_project_path do %>
+          <button class="m-1 ml-24 shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+            Novo Projeto
+          </button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%# <%= link_to 'Novo Projeto', projects_new_path %>
-
-<p>Opa, bem vindo</p>
-
-<% @projects.each do |project| %>
-  ID: <%= project.id %> <br>
-  Titulo = <%= project.title %> 
-  <br>
-  Descriçao = <%= project.description %>
-<br>
-<br>
-<% end %>
+<div class="w-2/3 mx-auto">
+  <div class="bg-white shadow-md rounded my-6">
+    <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+      <thead>
+        <tr>
+          <th class="py-4 px-6 bg-grey-lightest text-blue-500 font-bold text-center uppercase text-sm text-grey-dark border-b border-grey-light">Titulo</th>
+          <th class="py-4 px-6 bg-grey-lightest text-blue-500 font-bold text-center uppercase text-sm text-grey-dark border-b border-grey-light">Descriçao</th>
+          <th class="py-4 px-6 bg-grey-lightest text-blue-500 font-bold text-center uppercase text-sm text-grey-dark border-b border-grey-light">Acao</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr class="hover:bg-grey-lighter">
+            <td class="py-4 px-6 border-b border-grey-light text-left"><%= project.title %></td>
+            <td class="py-4 px-6 border-b border-grey-light text-left"><%= project.description %></td>
+            <td class="py-4 px-6 border-b border-grey-light text-center">
+              <%= link_to 'Editar', edit_project_path(project), class: 'shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded' %>
+              <%= link_to 'Remover', project_path(project), method: 'delete', class: 'shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded', data: { confirm: "Voce tem Certeza?" } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

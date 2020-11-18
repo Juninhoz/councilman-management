@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[update edit]
+  before_action :set_project, only: %i[update edit destroy]
 
   def index
     @projects = Project.all
@@ -18,6 +18,11 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
+    redirect_to projects_path
+  end
+
+  def destroy
+    @project.destroy
     redirect_to projects_path
   end
 
