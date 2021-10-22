@@ -8,7 +8,7 @@ WORKDIR /app
 
 COPY Gemfile Gemfile.lock ./
 
-ENV BUNDLER_VERSION 2.1.0
+ENV BUNDLER_VERSION 2.1.4
 RUN gem update --system \
     && gem install bundler -v $BUNDLER_VERSION \
     && bundle install -j 4 \
